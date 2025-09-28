@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+/* ------------
+    GENERAL
+------------ */
+body {
+    font-family: 'Comic Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #1A2F14;
+    text-align: center;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+h2 {
+    font-size: 3rem;
+    color: #1A2F14;
+    text-align: center;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+h3 {
+    font-size: 2.5rem;
+    color: #1A2F14;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+h4 {
+    font-size: 2rem;
+    color: #1A2F14;
+    text-align: center;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+p {
+    font-size: 1.2rem;
+    color: black;
+    margin: 0;
+}
+
+/* Titre body */
+.titre {
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    max-width: 1200px;
+    margin: 0 auto 0 auto;
+}
+
+.titre p {
+    width: 100%;
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+/* Contenu principal body */
+.contenu-principal {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---------------------
+    HEADER ET FOOTER
+--------------------- */
+header,
+footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu,
+.pied-de-page ul,
+.pied-de-page p {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    background-color: #1A2F14;
+}
+
+.menu a {
+    display: flex;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+}
+
+.icone-menu,
+#affichage-menu {
+    display: none;
+}
+
+.menu a:hover,
+.pied-de-page a:hover {
+    color: #52F583;
+    text-decoration: underline;
+}
+
+.pied-de-page a,
+.pied-de-page p {
+    display: flex;
+    padding: 0;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+/* ---------------------------------------
+    PAGE D'ACCUEIL ET PAGES CATEGORIES
+--------------------------------------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 80%;
+    max-width: 1200px;
+    margin: 1rem auto 1rem auto;
+}
+
+.grid>article {
+    position: relative;
+    overflow: hidden;
+}
+
+.grid>article:hover {
+    border: 0.3rem solid #1A2F14;
+}
+
+.grid .carre {
+    /*pas de aspect-ratio pour que ça s'adapte aux rectangles */
+    grid-row: span 2;
+}
+
+.grid .rectangle {
+    aspect-ratio: 2 / 1;
+    grid-row: span 1;
+}
+
+.grid img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.texte {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.7rem 0 0.7rem 0;
+}
+
+.texte h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: white;
+    margin: 0;
+}
+
+.texte h3 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: white;
+    margin: 0;
+}
+
+.texte p {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+}
+
+/* -------------------
+    PAGES PRODUITS
+------------------- */
+
+/* Galerie d'images */
+.galerie-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto 0 auto;
+}
+
+.galerie-flex .galerie {
+    width: 30%;
+}
+
+.galerie-flex .galerie img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.galerie-flex .galerie img:hover {
+    border: 0.3rem solid #1A2F14;
+}
+
+/* Boite d'achat */
+.prix {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1A2F14;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.stock {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: #52F583;
+    margin-bottom: 1rem;
+}
+
+.achat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ajouter-panier {
+    padding: 0.5rem 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Barre des mois floraison et plantation */
+.barre-mois {
+    display: flex;
+    gap: 0.2rem;
+    overflow-x: auto;
+    padding-bottom: 0.3rem;
+}
+
+.mois,
+.mois-ok {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 auto;
+    min-width: 40px;
+    height: 30px;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.mois {
+    background-color: #52F583;
+    color: black;
+}
+
+.mois-ok {
+    background-color: #1A2F14;
+    color: white;
+    font-weight: bold;
+}
+
+/* Produits recommandés */
+.produits-recommandes {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.scroll-horizontal {
+    display: flex;
+    gap: 1rem;
+}
+
+.scroll-horizontal .produit {
+    flex: 0 0 30%;
+    text-align: center;
+}
+
+.scroll-horizontal .produit img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.scroll-horizontal .produit a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.scroll-horizontal .produit:hover {
+    border: 0.3rem solid #1A2F14;
+}
+
+.produits-recommandes h4 {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.produits-recommandes p {
+    margin: 0 0 1rem 0;
+}
+
+/* ---------------
+    FORMULAIRE
+--------------- */
+label {
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1.5rem;
+}
+
+button {
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1.5rem;
+}
+
+input,
+textarea {
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1.2rem;
+}
+
+form {
+    max-width: 30rem;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input,
+form select,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+form>*:last-child {
+    /* Bouton Envoyer */
+    padding: 0.5rem 3rem;
+    margin-bottom: 1.5rem;
+}
+
+form>*:last-child:hover {
+    text-decoration: underline;
+}
+
+/* -------------------
+    LECTEUR D'ECRAN
+------------------- */
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    max-width: 1200px;
+    background: #1A2F14;
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 10;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.skip-link:hover {
+    color: #52F583;
+    text-decoration: underline;
+}
+
+/* Pages produits frise des mois*/
+.lecteur-ecran {
+    position: absolute;
+    left: -1000px;
+}
+
+/* -----------------------
+    MOBILE ET TABLETTE
+----------------------- */
+@media (max-width: 768px) {
+
+    /* Menu (header) */
+    .menu {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 15rem;
+        max-width: 60rem;
+        z-index: 1000;
+    }
+
+    #affichage-menu:checked+.icone-menu+.menu {
+        display: flex;
+    }
+
+    .icone-menu {
+        display: block;
+        font-size: 3rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+        width: 100%;
+        background-color: #1A2F14;
+        color: white;
+    }
+
+    .pied-de-page {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .pied-de-page ul {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    /* Page d'accueil et pages catégories */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid>article {
+        aspect-ratio: auto;
+    }
+
+    /* Formulaire */
+    label {
+        font-size: 1.2rem;
+    }
+
+    button,
+    input,
+    textarea {
+        font-size: 1rem;
+    }
+
+    /* Pages produit */
+    .galerie-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .galerie-flex .galerie {
+        width: 100%;
+    }
+}
+
+/* ----------------
+    MODE SOMBRE
+---------------- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        color: white;
+    }
+
+    .menu,
+    .pied-de-page ul,
+    .pied-de-page p {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 1rem;
+        background-color: black;
+    }
+
+    .menu a,
+    .pied-de-page ul a,
+    .pied-de-page p a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .menu a:hover,
+    .pied-de-page ul a:hover,
+    .pied-de-page p a:hover {
+        color: #6fb7ff;
+        text-decoration: underline;
+    }
+}

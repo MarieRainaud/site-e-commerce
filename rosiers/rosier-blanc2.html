@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose blanche</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        #zoom {
+            display: none;
+        }
+
+        #img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100vh;
+            max-height: 100vh;
+            cursor: zoom-in;
+        }
+
+        #zoom:checked+label #img {
+            max-width: none;
+            max-height: none;
+            cursor: zoom-out;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="zoom">
+    <label for="zoom">
+        <img src="../img/rosier-blanc2.jpg" alt="Rose blanche" id="img">
+    </label>
+</body>
+
+</html>
