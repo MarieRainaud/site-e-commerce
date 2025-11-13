@@ -1,5 +1,8 @@
-# Projet final de cours HTML / CSS
+# Projet individuel d'évaluation de cours HTML / CSS
 # Création d'un site E-commerce
+
+Ce projet a été réalisé dans le cadre de l'évaluation finale du cours de HTML/CSS.
+Vous pouvez accéder au site via le lien dans About.
 
 ## Consignes :
 
